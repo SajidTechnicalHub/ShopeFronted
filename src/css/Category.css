@@ -1,0 +1,20 @@
+.category-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.add-category-form{
+    width: 50%;
+   
+}
+.category-action-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.table{
+    width: 600px!important;
+    ;
+}
