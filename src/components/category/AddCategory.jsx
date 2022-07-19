@@ -1,7 +1,10 @@
 
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios'
+import { render } from '@testing-library/react';
+import ViewCategory from './ViewCategory';
+
 
 const AddCategory = () => {
 
@@ -18,8 +21,18 @@ const AddCategory = () => {
     }
     const submitEvent = (e) => {
         e.preventDefault()
-console.log('submit event occure')
+        
+        // fetch("http://localhost:3000/api/v1/categories", {
+        //   method:'POST',
+        //   headers: {
+        //     "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify({
+        //     category_name:input
+        //   })
+        // }).then((res) => res.json())
         axios.post("http://localhost:3000/api/v1/categories", {category_name: input.category})
+        
         .then(function (response){
           console.log(response);
          
@@ -29,29 +42,14 @@ console.log('submit event occure')
           console.log(error);
         })
 
-        navigate("/");
+        navigate( '/');
+       
+
+        
+
+
 
     }
-
-
-    // const newList = (e) =>{
-    //   if (e.key === "Enter" && !(e.target.value === "")){
-    //     axios.post("http://localhost:3000/api/v1/tdlists", {title: input.list})
-    //     .then(function (response){
-    //       console.log(response);
-    //       navigate('/home');
-    //       setStatus(true)
-    //       setInput({
-    //         list:''
-    //       })
-          
-    //     })
-    //     .catch( function (error){
-    //       console.log(error);
-    //     })
-        
-    //   }
-    // }
 
 
   return (

@@ -58,20 +58,20 @@ const ViewCategory = () => {
                             {
                                 category.map((category, index) => {
                                     return (
-                                        <>
-                                            <tr key={category.id}>
+                                        <React.Fragment key={category.id}>
+                                            <tr >
                                                 <td>{category.id}</td>
                                                 <td>{category.category_name}</td>
                                                 <td>
-                                                    <span className='category-action-container'>
+                                                    <span className='category-action-container' >
                                                         <span className='btn btn-primary btn-sm'>View</span>
-                                                        <span className='btn btn-success btn-sm'>Edit</span>
+                                                        <Link to={ `/edit/${category.id}`} className='btn btn-success btn-sm'>Edit</Link>
                                                         <span className='btn btn-danger btn-sm' onClick={() => handleDelete(category.id)}>Delete</span>
                                                     </span>
                                                 </td>
 
                                             </tr>
-                                        </>
+                                        </React.Fragment>
                                     )
                                 })
                             }
